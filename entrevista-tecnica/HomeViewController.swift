@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftUI
+import Foundation
 
 class ItemModel {
     var title: String
@@ -92,11 +93,11 @@ class HomeViewController: UIViewController {
         guard let indexString = gesture.name,
               let index = Int(indexString) else { return }
         
-        let wrongIndex = max(index - 1, 0)
-        let wrongText = items[wrongIndex]
+        let indexNumber = max(index - 1, 0)
+        let item = items[indexNumber]
         
         let vc = DetailViewController()
-        vc.textFromList = "\(wrongText.title) \(wrongText.number)"
+        vc.textFromList = "\(item.title) \(item.number)"
         navigationController?.pushViewController(vc, animated: true)
     }
 }
