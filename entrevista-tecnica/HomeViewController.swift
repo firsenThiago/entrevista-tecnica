@@ -93,7 +93,7 @@ class HomeViewController: UIViewController {
         guard let indexString = gesture.name,
               let index = Int(indexString) else { return }
         
-        let indexNumber = max(index - 1, 0)
+        let indexNumber = index - 1
         let item = items[indexNumber]
         
         let vc = DetailViewController()
